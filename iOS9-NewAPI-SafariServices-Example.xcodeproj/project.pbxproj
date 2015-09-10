@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		7E03B5921BA10E8600FC44B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E03B5911BA10E8600FC44B3 /* AppDelegate.swift */; };
-		7E03B5941BA10E8600FC44B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E03B5931BA10E8600FC44B3 /* ViewController.swift */; };
 		7E03B5971BA10E8600FC44B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E03B5951BA10E8600FC44B3 /* Main.storyboard */; };
 		7E03B5991BA10E8600FC44B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E03B5981BA10E8600FC44B3 /* Assets.xcassets */; };
 		7E03B59C1BA10E8600FC44B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E03B59A1BA10E8600FC44B3 /* LaunchScreen.storyboard */; };
+		7E03B5A81BA10FD600FC44B3 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E03B5A71BA10FD600FC44B3 /* MainTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7E03B58E1BA10E8600FC44B3 /* iOS9-NewAPI-SafariServices-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS9-NewAPI-SafariServices-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E03B5911BA10E8600FC44B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7E03B5931BA10E8600FC44B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7E03B5961BA10E8600FC44B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E03B5981BA10E8600FC44B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E03B59B1BA10E8600FC44B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E03B59D1BA10E8600FC44B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E03B5A71BA10FD600FC44B3 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTableViewController.swift; path = App/Controllers/MainTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +54,46 @@
 		7E03B5901BA10E8600FC44B3 /* iOS9-NewAPI-SafariServices-Example */ = {
 			isa = PBXGroup;
 			children = (
-				7E03B5911BA10E8600FC44B3 /* AppDelegate.swift */,
-				7E03B5931BA10E8600FC44B3 /* ViewController.swift */,
+				7E03B5A31BA10ECD00FC44B3 /* App */,
+			);
+			path = "iOS9-NewAPI-SafariServices-Example";
+			sourceTree = "<group>";
+		};
+		7E03B5A31BA10ECD00FC44B3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7E03B5A61BA10F1300FC44B3 /* Controllers */,
+				7E03B5A51BA10EF100FC44B3 /* Root */,
+				7E03B5A41BA10ED800FC44B3 /* Ressources */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		7E03B5A41BA10ED800FC44B3 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
 				7E03B5951BA10E8600FC44B3 /* Main.storyboard */,
 				7E03B5981BA10E8600FC44B3 /* Assets.xcassets */,
 				7E03B59A1BA10E8600FC44B3 /* LaunchScreen.storyboard */,
 				7E03B59D1BA10E8600FC44B3 /* Info.plist */,
 			);
-			path = "iOS9-NewAPI-SafariServices-Example";
+			name = Ressources;
+			sourceTree = "<group>";
+		};
+		7E03B5A51BA10EF100FC44B3 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				7E03B5911BA10E8600FC44B3 /* AppDelegate.swift */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		7E03B5A61BA10F1300FC44B3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7E03B5A71BA10FD600FC44B3 /* MainTableViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E03B5941BA10E8600FC44B3 /* ViewController.swift in Sources */,
+				7E03B5A81BA10FD600FC44B3 /* MainTableViewController.swift in Sources */,
 				7E03B5921BA10E8600FC44B3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
