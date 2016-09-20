@@ -19,6 +19,12 @@ iOS 9~ Experiments - New API Components - Internal Safari Services Browser.
 
 Tested on iOS 9.0, 9.1 Simulators, iPhone 6.
 
+
+## Important
+
+Get the master branch for XCode 8 / Swift 3 updated project.
+
+
 ## Usage
 
 To run the example project, download or clone the repo.
