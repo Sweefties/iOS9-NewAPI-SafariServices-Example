@@ -12,8 +12,8 @@ import SafariServices
 class MainTableViewController: UITableViewController {
 
     // MARK: - Properties
-    private let cellIdentifier = "defaultCell"
-    private var url:[String] = ["https://apple.com",
+    fileprivate let cellIdentifier = "defaultCell"
+    fileprivate var url:[String] = ["https://apple.com",
         "https://google.com",
         "https://github.com",
         "https://twitter.com",
@@ -40,13 +40,13 @@ class MainTableViewController: UITableViewController {
     - parameter str :String url to scan
     - returns: host domain as string
     */
-    private func scanUrlString(str:String) -> String {
-        let scan = NSScanner(string:str)
+    fileprivate func scanUrlString(_ str:String) -> String {
+        let scan = Scanner(string:str)
         var scanned: NSString?
         
-        if scan.scanUpToString("://", intoString:nil) {
-            scan.scanString("://", intoString:nil)
-            if scan.scanUpToString(".", intoString:&scanned) {
+        if scan.scanUpTo("://", into:nil) {
+            scan.scanString("://", into:nil)
+            if scan.scanUpTo(".", into:&scanned) {
                 let result: String = scanned as! String
                 return result
             }
@@ -55,24 +55,24 @@ class MainTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return url.count ?? 0
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return url.count 
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         // Configure the cell...
-        cell.textLabel?.text = scanUrlString(url[indexPath.row] as String)
+        cell.textLabel?.text = scanUrlString(url[(indexPath as NSIndexPath).row] as String)
         return cell
     }
 
     // MARK: - Table view Delegate
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let weburl = url[indexPath.row]
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let weburl = url[(indexPath as NSIndexPath).row]
         self.openUrlWithSafariVC(weburl)
     }
     
@@ -83,14 +83,14 @@ typealias SafariDelegate = MainTableViewController
 extension SafariDelegate : SFSafariViewControllerDelegate {
     
     // dismiss SFSafariViewController (Done button)
-    func safariViewControllerDidFinish(controller: SFSafariViewController) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.dismiss(animated: true, completion: nil)
     }
     
     // present SFSafariViewController modally
-    private func openUrlWithSafariVC(urlstring:String) {
-        let sfvc = SFSafariViewController(URL: NSURL(string: urlstring)!, entersReaderIfAvailable: true)
+    fileprivate func openUrlWithSafariVC(_ urlstring:String) {
+        let sfvc = SFSafariViewController(url: URL(string: urlstring)!, entersReaderIfAvailable: true)
         sfvc.delegate = self
-        self.presentViewController(sfvc, animated: true, completion: nil)
+        self.present(sfvc, animated: true, completion: nil)
     }
 }
